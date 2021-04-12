@@ -1,26 +1,14 @@
 from flask import Flask,jsonify,request,Response
 from flask_cors import CORS, cross_origin
 app=Flask(__name__)
-def format_server_time():
-  server_time = time.localtime()
-  return time.strftime("%I:%M:%S %p", server_time)
 CORS(app, support_credentials=True)
 if __name__ == '__main__':
     app.debug=True
-    app.run(host='0.0.0.0',port=int(os.environ.get('PORT',8080)))
-@app.route('/')
-def index():
-    context = { 'server_time': format_server_time() }
-    return render_template('index.html', context=context)
-
-
-
-
-
-@app.route("/login",methods=['GET','POST'])
+    app.run(host='localhost',port=5000)
+@app.route('/',methods=['GET','POST'])
 def get_users():
     if request.method=='POST':
-        return jsonify({'user1':'Muz','user2':'Khai','user3':'Haziq','user4':'Fin','user5':'Hazim','user6':'Hari','user7':'Ryan','user8':'Ahmad'})
+        return jsonify({'user1':'Muz','user2':'Khai','user3':'Haziq','user4':'Fin'})
     if request.method=='GET':
         return 'Hello'
 @app.route('/wins',methods=['POST'])
