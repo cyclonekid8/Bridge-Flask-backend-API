@@ -22,6 +22,13 @@ def index():
     # 3
     response.headers['Cache-Control'] = 'public, max-age=300, s-maxage=600'
     return response
+
+@app.route('/muz',methods=['POST','GET'])
+def getMuz():
+    if request.method=='GET':
+        return 'HELLO GET'
+    if request.method=='POST':
+        return 'HELLO POST'
 @app.route('/wins',methods=['POST'])
 def wins():
     data=request.get_json()
