@@ -7,7 +7,7 @@ app=Flask(__name__)
 
 if __name__ == '__main__':
     app.debug=True
-    app.run(host='localhost',port=int(os.environ.get("PORT",1234)))
+    app.run(host='localhost',port=int(os.environ.get("PORT",8080)))
 def format_server_time():
   server_time = time.localtime()
   return time.strftime("%I:%M:%S %p", server_time)
