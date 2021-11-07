@@ -10,7 +10,8 @@ RUN pip install -r requirements.txt
 EXPOSE 8080
 #3
 ENV PORT 8080
-WORKDIR /
+COPY . /app
+WORKDIR /app
 
 # 4
 CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 app:app
