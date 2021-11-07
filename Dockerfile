@@ -10,6 +10,7 @@ WORKDIR /app
 
 # 4
 ENV PORT 8080
-
 # 5
+ENV FLASK_APP app
+# 6
 CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 app:app
