@@ -28,7 +28,7 @@ def index():
 @app.route('/muz',methods=['POST','GET'])
 def getMuz():
     if request.method=='GET':
-        return 'HELLO GET v1 '
+        return 'HELLO GET v2 '
     if request.method=='POST':
         return 'HELLO POST'
 @app.route('/wins',methods=['POST'])
@@ -146,8 +146,8 @@ def wins():
         print(rank,indexx)
         resp=jsonify({'rank':rank,'index':indexx})
         return resp
-@app.route('/bid',methods=['GET','POST'])
 
+@app.route('/bid',methods=['GET','POST'])
 def bid():
     biddict={'1 Clubs':1,'1 Diamonds':2,'1 Hearts':3,'1 Spades':4,'1 No Trump':5,
             '2 Clubs':6,'2 Diamonds':7,'2 Hearts':8,'2 Spades':9,'2 No Trump':10,
