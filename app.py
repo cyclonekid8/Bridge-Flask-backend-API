@@ -5,7 +5,7 @@ import os
 import time
 import numpy as np
 app=Flask(__name__)
-CORS(app)
+CORS(app,support_credentials=True)
 
 if __name__ == '__main__':
     app.debug=True
@@ -25,14 +25,12 @@ def index():
     response.headers['Cache-Control'] = 'public, max-age=300, s-maxage=600'
     return response
 
-@cross_origin(supports_credentials=True)
 @app.route('/muz',methods=['POST','GET'])
 def getMuz():
     if request.method=='GET':
         return 'HELLO GET'
     if request.method=='POST':
         return 'HELLO POST'
-@cross_origin(supports_credentials=True)
 @app.route('/wins',methods=['POST'])
 def wins():
     data=request.get_json()
@@ -148,7 +146,6 @@ def wins():
         print(rank,indexx)
         resp=jsonify({'rank':rank,'index':indexx})
         return resp
-@cross_origin(supports_credentials=True)
 @app.route('/bid',methods=['GET','POST'])
 
 def bid():
