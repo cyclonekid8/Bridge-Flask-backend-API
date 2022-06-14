@@ -28,7 +28,7 @@ def index():
 @app.route('/muz',methods=['POST','GET'])
 def getMuz():
     if request.method=='GET':
-        return 'HELLO GET'
+        return 'HELLO GET v1'
     if request.method=='POST':
         return 'HELLO POST'
 @app.route('/wins',methods=['POST'])
