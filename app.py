@@ -147,7 +147,7 @@ def wins():
         resp=jsonify({'rank':rank,'index':indexx})
         return resp
 
-@app.route('/bid',methods=['GET','POST'])
+@app.route('/bids',methods=['GET','POST'])
 def bid():
     biddict={'1 Clubs':1,'1 Diamonds':2,'1 Hearts':3,'1 Spades':4,'1 No Trump':5,
             '2 Clubs':6,'2 Diamonds':7,'2 Hearts':8,'2 Spades':9,'2 No Trump':10,
