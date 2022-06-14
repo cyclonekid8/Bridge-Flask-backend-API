@@ -1,9 +1,11 @@
 from flask import Flask,jsonify,request,Response,render_template,make_response
 
+from flask_cors import CORS, cross_origin
 import os
 import time
 import numpy as np
 app=Flask(__name__)
+CORS(app, supports_credentials=True)
 
 if __name__ == '__main__':
     app.debug=True
