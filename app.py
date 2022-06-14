@@ -5,7 +5,7 @@ import os
 import time
 import numpy as np
 app=Flask(__name__)
-CORS(app, supports_credentials=True)
+CORS(app)
 
 if __name__ == '__main__':
     app.debug=True
