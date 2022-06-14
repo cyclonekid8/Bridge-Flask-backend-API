@@ -165,12 +165,12 @@ def bid():
              "7 Clubs","7 Diamonds","7 Hearts","7 Spades","7 No Trump"]
     data=request.get_json()
     
-    if request.method=="GET":
+    if request.method=='GET':
         resp=jsonify({'list':bidlist})
         print("here")
         
         return resp
-    if request.method=="POST":
+    if request.method=='POST':
         
         data=request.get_json()
         keyy=data['bid']
