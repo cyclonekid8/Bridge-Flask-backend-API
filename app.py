@@ -149,29 +149,27 @@ def wins():
 
 @app.route('/bids',methods=['GET','POST'])
 def bid():
-    biddict={'1 Clubs':1,'1 Diamonds':2,'1 Hearts':3,'1 Spades':4,'1 No Trump':5,
-            '2 Clubs':6,'2 Diamonds':7,'2 Hearts':8,'2 Spades':9,'2 No Trump':10,
-            '3 Clubs':11,'3 Diamonds':12,'3 Hearts':13,'3 Spades':14,'3 No Trump':15,
-            '4 Clubs':16,'4 Diamonds':17,'4 Hearts':18,'4 Spades':19,'4 No Trump':20,
-            '5 Clubs':21,'5 Diamonds':22,'5 Hearts':23,'5 Spades':24,'5 No Trump':25,
-            '6 Clubs':26,'6 Diamonds':27,'6 Hearts':28,'6 Spades':29,'6 No Trump':30,
-            '7 Clubs':31,'7 Diamonds':32,'7 Hearts':33,'7 Spades':34,'7 No Trump':35}
-    bidlist=["1 Clubs","1 Diamonds","1 Hearts","1 Spades","1 No Trump",
+    
+    if request.method=='GET':
+        bidlist=["1 Clubs","1 Diamonds","1 Hearts","1 Spades","1 No Trump",
              "2 Clubs","2 Diamonds","2 Hearts","2 Spades","2 No Trump",
              "3 Clubs","3 Diamonds","3 Hearts","3 Spades","3 No Trump",
              "4 Clubs","4 Diamonds","4 Hearts","4 Spades","4 No Trump",
              "5 Clubs","5 Diamonds","5 Hearts","5 Spades","5 No Trump",
              "6 Clubs","6 Diamonds","6 Hearts","6 Spades","6 No Trump",
              "7 Clubs","7 Diamonds","7 Hearts","7 Spades","7 No Trump"]
-    data=request.get_json()
-    
-    if request.method=='GET':
         resp=jsonify({'list':bidlist})
         print("here")
         
         return resp
-    if request.method=='POST':
-        
+    elif request.method=='POST':
+        bidlist=["1 Clubs","1 Diamonds","1 Hearts","1 Spades","1 No Trump",
+             "2 Clubs","2 Diamonds","2 Hearts","2 Spades","2 No Trump",
+             "3 Clubs","3 Diamonds","3 Hearts","3 Spades","3 No Trump",
+             "4 Clubs","4 Diamonds","4 Hearts","4 Spades","4 No Trump",
+             "5 Clubs","5 Diamonds","5 Hearts","5 Spades","5 No Trump",
+             "6 Clubs","6 Diamonds","6 Hearts","6 Spades","6 No Trump",
+             "7 Clubs","7 Diamonds","7 Hearts","7 Spades","7 No Trump"]
         data=request.get_json()
         keyy=data['bid']
         index=bidlist.index(keyy)
@@ -183,4 +181,5 @@ def bid():
         
         
         return resp
+
     
