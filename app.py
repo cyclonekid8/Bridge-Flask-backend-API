@@ -104,6 +104,7 @@ def wins():
             if(suit=='SPADES'):
                 if(value[1] != trumpsuit and value[0] not in spades.keys()):
                     rank.append([value[0],0])
+                    continue;
                 if(value[1] ==trumpsuit):
                     rank.append([value[0],trump[value[0]]+30])
                 else:
@@ -112,6 +113,7 @@ def wins():
             if(suit=='HEARTS'):
                 if(value[1] != trumpsuit and value[0] not in hearts.keys()):
                     rank.append([value[0],0])
+                    continue;
                 if(value[1] ==trumpsuit):
                     rank.append([value[0],trump[value[0]]+30])
                 else:
@@ -119,6 +121,7 @@ def wins():
             if(suit=='CLUBS'):
                 if(value[1] != trumpsuit and value[0] not in clubs.keys()):
                     rank.append([value[0],0])
+                    continue;
                 if(value[1] ==trumpsuit):
                     rank.append([value[0],trump[value[0]]+30])
                 else:
@@ -126,6 +129,7 @@ def wins():
             if(suit=='DIAMONDS'):
                 if(value[1] != trumpsuit and value[0] not in diamonds.keys()):
                     rank.append([value[0],0])
+                    continue;
                 if(value[1] ==trumpsuit):
                     rank.append([value[0],trump[value[0]]+30])
                 else:
